@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="egovframework.example.mappers.board.BoardMapper">
+    <select id="selectBoard" resultType="BoardVO">
+        SELECT
+        seq,
+        title,
+        description,
+        writer
+        FROM board
+        ORDER BY seq DESC
+    </select>
+    
+    <insert id="insertBoard" parameterType="BoardVO">
+    	INSERT INTO
+    	board(title, description, writer)
+    	VALUES (#{title}, #{description}, #{writer})
+    </insert>
+    
+</mapper>
